@@ -6,12 +6,47 @@
 
 
 <!--main content-->
-<main class="container">
-  <div class="jumbotron">
-    <h1 class="display-4"><%= title%> page</h1>
-
+<main class="welcome-container">
+  <div class="welcome-left-container">
+    <div class="jumbotron">
+      <h1 class="welcome-title">Welcome John!</h1>
+      <p class="welcome-subtitle">Write Journals and improve your resome</p>
+    </div>
+  
+    <div class="welcome-nav">
+      <div class="welcome-nav-row">
+        <table>
+          <tr>  
+            <td><div class="welcome-nav-item"><img src="Assets/images/welcome/personal.png"> Presonal Info <span>></span></div></td>
+            <td><div class="welcome-nav-item"><img src="Assets/images/welcome/journal.png">Journal <span>></span></div></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+      <div class="welcome-nav-row">
+        <table>
+          <tr>  
+            <td><div class="welcome-nav-item"><img src="Assets/images/welcome/kanban.png">Kanban Board <span>></span></div></td>
+            <td><div class="welcome-nav-item"><img src="Assets/images/welcome/resume.png">Resume <span>></span></div></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+          
+    </div>
+  
+    <div class="welcome-left-bottom">
+      <h3>Cover Letter</h3>
+      <p class="welcome-subtitle">Try our AI cover writing tool.</p>
+      <a class="welcome-button">+ Cover Letter</a>
+    </div>
+  </div>
+  
+  <div class="welcome-right-container">
+    <img src="Assets/images/welcome/welcomeRight.png" alt="">
   </div>
 </main>
+
 
 <%- include partials/footer.ejs%>
 <%- include partials/bottom_nav.ejs%>
