@@ -207,6 +207,7 @@ body {
 /* Welcome Dashboard Page */
   .welcome-container {
     display: inline-flex;
+    margin-left: 17rem;
   }
   .welcome-left-container{
     width: 50%;

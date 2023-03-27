@@ -9,8 +9,8 @@ app.set('view engine', 'ejs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log('home');
-  res.render('home', { title: 'Home' });
+  console.log('index');
+  res.render('index', { title: 'Dashboard' });
 });
 /* GET home page. */
 router.get('/home', function(req, res, next) {
