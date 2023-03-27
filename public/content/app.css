@@ -306,3 +306,235 @@ body {
   .welcome-button:hover{
     color: white;
   }
+
+/*Kanban Board*/
+  :root {
+    --icon-options: #a4c75a;
+    --icon-options-clear: #9f9f9f;
+    --icon-opacity: #5972cb;
+    --icon-warning: #a02f1b;
+    --icon-board-full: #c5bc56;
+    --icon-board-bg: #a27dc2;
+    --icon-remove: #ff6347;
+    --icon-urgent: #ff8800;
+    --icon-new-task: #2a92bf;
+    --icon-total: #777777;
+    --icon-import-export: #607d8b;
+    --list-working: #a8ebb7;
+    --list-done: #ded591;
+    --dark-color: #282828;
+  }
+  
+  * {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans serif;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+  }
+  
+  /*** LISTS ***/
+  #myLists {
+    padding: 1.35% 1% 5% 1%;
+    float: left;
+    width: 100%;
+    display: inline-table;
+    /*min-height: calc(100% - 108px);*/
+    margin-top: 60px;
+  }
+  #myLists > div {
+    width: 32.3%;
+    display: inline-table;
+    margin: 0.5%;
+    background: rgba(247 247 247 / 0.5);
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 6px, rgba(0, 0, 0, 0.25) 0px 2px 6px;
+  }
+  #myLists div h3 {
+    background: var(--icon-new-task);
+    color: #fff;
+    padding: 0.65em;
+    margin-top: 0;
+    font-weight: normal;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+  }
+  #myLists #work-in h3 {
+    background: var(--list-working);
+  }
+  #myLists #do-ne h3 {
+    background: var(--list-done);
+  }
+  #myLists div h3:before {
+    content: "\2022";
+    border: 2px solid rgb(255 255 255);
+    float: left;
+    width: 1em;
+    height: 1em;
+    color: var(--icon-new-task);
+    margin-right: 0.5em;
+    border-radius: 2px;
+    background: rgb(255 255 255);
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.1em;
+  }
+  #myLists #work-in h3:before {
+    background: rgb(255 255 255 / 1);
+    color: var(--list-working);
+  }
+
+  #myLists #do-ne h3:after {
+    position: absolute;
+    color: var(--list-done);
+    font-size: 1.5em;
+    transform: rotate(120deg);
+    left: 0.5em;
+    top: 0.2em;
+  }
+  #myLists h3 span {
+    float: right;
+    width: 1.5em;
+    text-align: center;
+    line-height: 1.7em;
+    border-radius: 1px;
+    font-size: 0.775em;
+    margin-right: -0.25em;
+    color: rgb(255 255 255 / 75%);
+    font-weight: bold;
+    background: #00000070;
+  }
+  #myLists ul {
+    padding: 0;
+    margin: 0.5em;
+    height: calc(100% - 3.5em);
+    box-sizing: border-box;
+    padding-bottom: 0.6em;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  #myLists ul:after {
+    margin-top: 0;
+    content: "DROP TASK HERE";
+    border: 2px dashed #00000040;
+    padding: 1.05em 0.5em;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(0 0 0 / 0.35);
+    display: inline-table; /*block*/
+    width: 100%;
+    box-sizing: border-box;
+    bottom: 0.8em;
+    border-radius: 2px;
+    font-weight: bold;
+    min-height: 0;
+    flex: 1;
+  }
+  #myLists ul:hover:after {
+    border-color: rgb(0 0 0 / 0.35);
+    color: rgb(0 0 0 / 0.4);
+    background: #ffffff40;
+  }
+  #myLists ul li {
+    position: relative;
+    list-style: none;
+    min-height: 3.5em; /*2.35em*/
+    border: 3px dashed rgb(0 0 0 / 0);
+    border-radius: 2px;
+    background: #ffffff;
+    padding: 0.05em 1.25em 1.65em 0.5em;
+    margin-bottom: 0.65em;
+    color: #828282;
+    cursor: grabbing;
+    box-shadow: 1px 1px 2px -1px #00000087; /*1px 1px 5px 0px #ccc*/
+    max-height: 10em;
+    /*overflow: hidden;*/
+  }
+  #myLists ul li:active {
+    cursor: grabbing;
+    border-color: rgba(0, 0, 0, 0.15);
+  }
+  #myLists ul li:before {
+    content: "";
+    background: var(--icon-new-task);
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    height: calc(100% + 2px);
+    width: 4px;
+    border-radius: 1px;
+    border: 2px solid transparent;
+  }
+  #myLists #work-in ul li:before {
+    background: var(--list-working);
+  }
+  #myLists #do-ne ul li:before {
+    background: var(--list-done);
+  }
+  #myLists ul li:after {
+    content: "";
+    border-left: 2px dotted #fff;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -5px;
+  }
+  #myLists ul li span.txt {
+    cursor: pointer;
+    display: block;
+    padding: 0.25em 0.25em 0.25em 0.25em;
+    border: 1px dotted rgba(0, 0, 0, 0);
+    font-size: 0.95em;
+    overflow: hidden;
+    text-align: justify;
+    color: #666;
+    transition: color 0.4s ease 0s;
+    height: 100%;
+    max-height: 7.5em;
+  }
+  #myLists ul li span.txt:hover {
+    background: #ececec;
+    color: #999;
+    border: 1px dotted rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
+    transition: color 0.4s ease 0s;
+  }
+  #myLists ul li span.txt:before {
+    content: "EDIT";
+    position: absolute;
+    left: 1.25em;
+    background: #49637d80;
+    font-size: 0.65em;
+    bottom: 0.5em;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 1px;
+    padding: 0.25em 0.45em;
+  }
+  #myLists ul li span.idTask {
+    font-size: 0.7em;
+    color: #fff;
+    position: absolute;
+    left: 6.25em;
+    bottom: 5px;
+    background: var(--icon-new-task);
+    padding: 0 0.25em;
+    border-radius: 1px;
+    height: 16px;
+    line-height: 16px;
+  }
+  #myLists #ul-working.drag-enter:after {
+    background: #a8ebb7;
+  }
+  #myLists #ul-done.drag-enter:after {
+    background: #ded591;
+  }

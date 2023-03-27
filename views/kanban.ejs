@@ -1,12 +1,30 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    
-  </body>
-</html
+<%- include partials/header.ejs %>
+<%- include partials/main_nav.ejs %>
+<div style="margin-left: 17rem;">
+	<div class="grid-container">
+
+	<div id="myLists" class="kanban">
+	
+	<div id="work-in">
+		<h3>Education <span></span></h3>
+		<ul id="ul-working" class="section" ondrop="drop(event, this)" ondragover="allowDrop(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+      <li id="li-0003" draggable="true" ondragstart="drag(event)" ontouchstart="drag(event)" class="sample"><span class="txt">Lorem ipsum dolor sit amet consectetur, adipiscing elit augue felis.....</span></li>
+		  <li id="li-0006" draggable="true" ondragstart="drag(event)" ontouchstart="drag(event)" class="sample"><span class="txt">Lorem ipsum dolor sit amet consectetur, adipiscing elit augue felis.....</span></li>
+			<li id="li-0004" draggable="true" ondragstart="drag(event)" ontouchstart="drag(event)" class="sample"><span class="txt">Lorem ipsum dolor sit amet consectetur, adipiscing elit augue felis.....</span></li>
+		</ul>
+	</div>
+	<div id="do-ne">
+		<h3>Experience <span></span></h3>
+		<ul id="ul-done" class="section" ondrop="drop(event, this)" ondragover="allowDrop(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+			<li id="li-0001" draggable="true" ondragstart="drag(event)" ontouchstart="drag(event)" class="sample"><span class="txt">Lorem ipsum dolor sit amet consectetur, adipiscing elit augue felis.....</span></li>
+								<li id="li-0005" draggable="true" ondragstart="drag(event)" ontouchstart="drag(event)" class="sample"><span class="txt">Lorem ipsum dolor sit amet consectetur, adipiscing elit augue felis.....</span></li>
+								<li id="li-0002" draggable="true" ondragstart="drag(event)" ontouchstart="drag(event)" class="sample"><span class="txt">Lorem ipsum dolor sit amet consectetur, adipiscing elit augue felis.....</span></li>
+                <li id="li-0002" draggable="true" ondragstart="drag(event)" ontouchstart="drag(event)" class="sample"><span class="txt">Lorem ipsum dolor sit amet consectetur, adipiscing elit augue felis.....</span></li>
+                <li id="li-0002" draggable="true" ondragstart="drag(event)" ontouchstart="drag(event)" class="sample"><span class="txt">Lorem ipsum dolor sit amet consectetur, adipiscing elit augue felis.....</span></li>
+		</ul>
+	</div>
+	</div>
+</div>
+</div>
+<%- include partials/bottom_nav.ejs %>
+<%- include partials/footer.ejs %> 
