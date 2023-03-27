@@ -2,17 +2,43 @@
 
 <%- include partials/main_nav.ejs %>
     <style>
+
+      
+
+      body{
+        background-color: #F8F8F8;
+      }
+
+      .wrapper{
+        width: 100%;
+      }
+
+      .top-bar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 40px 0px 40px;
+        margin-top: 60px;
+      }
+
+      .ex-logo{
+        width: 80px;
+        height: 80px;
+      }
+
       .title{
-        margin-top: 100px;
-        font-size: 40px;
-        text-align: center;
+        border-radius: 10px;
+        padding: 30px 80px;
+        background: rgb(222, 221, 221);
+        font-size: 24px;
       }
 
       .content-container{
-        width: 90%;
+        width: 100%;
+        height: 800px;
         margin: auto;
-        margin-top: 100px;
-        border: 1px solid black;
+        margin-top: 60px;
+        /* border: 1px solid black; */
         display: flex;
         
       }
@@ -22,56 +48,101 @@
 
       .left-container{
         flex: 1;
-        border: 1px solid black;
+        /* border: 1px solid black; */
       }
 
       .menu-container{
         width: 80%;
         margin: auto;
-        border: 1px solid red;
+        /* border: 1px solid red; */
       }
 
       .menu-item{
-        border: 1px solid black;
+        border: 2px solid rgb(205, 203, 203);
         border-radius: 10px;
         font-size: 40px;
         text-align: center;
         margin-bottom: 20px;
         box-shadow: 1px 5px #dfd1d1;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .menu-item:hover{
+        background-color: snow;
+        color: #2451FF;
       }
 
       .journal{
-        background-color: rgb(63, 145, 232);
+        background-color: #2451FF;
         color: snow;
       }
 
       /*-----------left container end-----------------*/
+.center-container {grid-area: document;}
+.right-container {grid-area: option;}
 
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  'document document document option option'
+  'document document document option option'
+  'document document document option option';
+}
 
       .center-container{
-        flex: 2;
-        border: 1px solid black;
+        flex: 3;
+        /* border: 1px solid black; */
       }
 
       .center-content{
-        width: 80%;
+        width: 60%;
+        height: 80%;
+        background-color: white;
         margin: auto;
         height: 100%;
         border: 1px solid black;
         border-radius: 10px;
         position: relative;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        align-items: top;
         justify-content: center;
         box-shadow: 1px 5px #dfd1d1;
+      }
+
+      .center-left{
+        /* border: 1px solid black; */
+        width: 100%;
+        flex: 14;
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        margin-left: 40px;
+      }
+
+      .center-right{
+        /* border: 1px solid black; */
+        flex: 1;
       }
 
       .save-btn{
         position: absolute;
         bottom: 40px;
-        padding: 10px 20px 10px 20px;
+        padding: 20px 100px 20px 100px;
+        border-radius: 10px;
+        background-color: #2451FF;
+        color: white;
+        box-shadow: 1px 5px #dfd1d1;
+        font-size: 24px;
+        cursor: pointer;
       }
+
+      .save-btn:hover{
+        background-color: snow;
+        color: #2451FF;
+      }
+
+
 
 
 
@@ -82,7 +153,8 @@
 
       .right-container{
         flex: 1;
-        border: 1px solid black;
+        margin-right: 100px;
+        /* border: 1px solid black; */
       }
 
       .journal-container{
@@ -91,64 +163,152 @@
         font-size: 32px;
 
         text-align: center;
-        border: 1px solid red;
+        /* border: 1px solid red; */
       }
 
-      .past-journal-title{
+      .past-journal-btn{
         text-align: center;
         margin-bottom: 20px;
+        border-radius: 10px;
+        background-color: #2451FF;
+        padding: 15px 0px 15px 0px;
+        color: snow;
+        box-shadow: 1px 5px #dfd1d1;
+        cursor: pointer;
       }
 
-      .search-input{
-        font-size: 26px;
-        width: 92%;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        box-shadow: 1px 5px #dfd1d1;
+      .past-journal-btn:hover{
+        background-color: snow;
+        color: #2451FF;
+      }
+
+      .previous-work-logs-label{
+        color: grey;
+        text-align: left;
+        margin-bottom: 5px;
       }
 
       .journal-item{
-        border: 1px solid black;
+        border: 2px solid rgb(205, 203, 203);
         border-radius: 10px;
         font-size: 40px;
         text-align: center;
         margin-bottom: 20px;
         box-shadow: 1px 5px #dfd1d1;
+        font-size: 16px;
+        padding: 30px 2px 30px 2px;
+        background-color: white;
+        cursor: pointer;
+      }
+
+      .journal-item:hover{
+        background-color: rgb(211, 208, 208);
+      }
+
+      .journal-item-top{
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .journal-number{
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      .journal-item-top-date{
+        color: #2451FF;
+      }
+
+      .journal-item-bottom{
+        font-size: 18px;
+        color: grey;
       }
 
       /*-----------right container end-----------------*/
 
     </style>
-  </head>
+
   <body>
-    <div class="container">
-      <h1 class="title">Worklog</h1>
+    
+    <div class="wrapper">
+      <div class="top-bar">
+        <img class="ex-logo" src="Assets/images/resume_.png">
+        <div class="title">untitled-1</div>
+        <div></div>
+      </div>
       <div class="content-container">
-        <div class="left-container">
+        
+        <!-- <div class="left-container">
           <div class="menu-container">
             <div class="menu-item">Personal Info</div>
             <div class="menu-item journal">Journal</div>
             <div class="menu-item">Kanban Board</div>
-            <div class="menu-item">Job Listing</div>
             <div class="menu-item">Resume</div>
           </div>
-        </div>
-        <div class="center-container">
-          <div class="center-content">
-            <div>center</div>
+        </div> -->
+        <div style="margin-left: 17rem;" class="grid-container">
+          <div class="center-container">
+            <div class="center-content">
+              <div class="center-left">
+                <div>
+                  <h4>What did you do today?</h4>
+                  <hr>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque augue ligula, efficitur sed sem et, porttitor faucibus dolor. Donec venenatis nisi libero, eget sollicitudin nulla pellentesque a. Quisque a dui lectus. Aenean eget ullamcorper purus, vitae fermentum sapien. Aenean tellus tellus, pretium id leo eu, viverra accumsan ex.
+                  </p>
+                  <h4>What problems you encountered?</h4>
+                  <hr>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque augue ligula, efficitur sed sem et, porttitor faucibus dolor. Donec venenatis nisi libero, eget sollicitudin nulla pellentesque a. Quisque a dui lectus. Aenean eget ullamcorper purus, vitae fermentum sapien. Aenean tellus tellus, pretium id leo eu, viverra accumsan ex.
+                  </p>
+                  <h4>Lesson Learned?</h4>
+                  <hr>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque augue ligula, efficitur sed sem et, porttitor faucibus dolor. Donec venenatis nisi libero, eget sollicitudin nulla pellentesque a. Quisque a dui lectus. Aenean eget ullamcorper purus, vitae fermentum sapien. Aenean tellus tellus, pretium id leo eu, viverra accumsan ex.
+                  </p>
 
-            <button class="save-btn">Save Work Log</button>
+                </div>
+    
+                <div class="save-btn">Save</div>
+              </div>
+              <div class="center-right">
+                
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="right-container">
-          <div class="journal-container">
-            <div class="past-journal-title">Past Journal</div>
-            <input class="search-input" type="text" placeholder="..." />
-            <div class="journal-item">item1</div>
-            <div class="journal-item">item2</div>
-            <div class="journal-item">item3</div>
-            <div class="journal-item">item4</div>
-            <div class="journal-item">item5</div>
+          <div class="right-container">
+            <div class="journal-container">
+              <div class="past-journal-btn">Create Worklog</div>
+              <div class="previous-work-logs-label">Previous Works</div>
+              <div class="journal-item">
+                <div class="journal-item-top">
+                  <div class="journal-number">Journal #78</div>
+                  <div class="journal-item-top-date">March 23</div>
+                </div>
+                <div class="journal-item-bottom">Lorem ipsum dolor sit amet, costnoe...</div>
+              </div>
+              <div class="journal-item">
+                <div class="journal-item-top">
+                  <div class="journal-number">Journal #78</div>
+                  <div class="journal-item-top-date">March 23</div>
+                </div>
+                <div class="journal-item-bottom">Lorem ipsum dolor sit amet, costnoe...</div>
+              </div>
+              <div class="journal-item">
+                <div class="journal-item-top">
+                  <div class="journal-number">Journal #78</div>
+                  <div class="journal-item-top-date">March 23</div>
+                </div>
+                <div class="journal-item-bottom">Lorem ipsum dolor sit amet, costnoe...</div>
+              </div>
+              <div class="journal-item">
+                <div class="journal-item-top">
+                  <div class="journal-number">Journal #78</div>
+                  <div class="journal-item-top-date">March 23</div>
+                </div>
+                <div class="journal-item-bottom">Lorem ipsum dolor sit amet, costnoe...</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
