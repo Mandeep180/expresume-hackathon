@@ -207,7 +207,8 @@ body {
 /* Welcome Dashboard Page */
   .welcome-container {
     display: inline-flex;
-    margin-left: 17rem;
+    margin: 30px;
+    
   }
   .welcome-left-container{
     width: 50%;
@@ -246,6 +247,10 @@ body {
 .welcome-nav-item:hover {
   color: white;
   background-color: #2451FF;
+}
+
+.welcome-nav-row a {
+  text-decoration: none;
 }
 
 .welcome-nav-item img {
