@@ -9,8 +9,8 @@ app.set('view engine', 'ejs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log('index');
-  res.render('index', { title: 'Dashboard' });
+  console.log('home');
+  res.render('home', { title: 'Home' });
 });
 /* GET home page. */
 router.get('/home', function(req, res, next) {
@@ -42,6 +42,17 @@ router.get('/resume', function(req, res, next) {
 router.get('/kanban', function(req, res, next) {
   console.log("kanban");
   res.render('kanban', { title: 'kanban' });
+});
+/* GET academicinfo page */
+router.get('/academicinfo', function(req, res, next) {
+  console.log("academicinfo");
+  res.render('academicinfo', { title: 'academicinfo' });
+});
+
+/* GET academicinfo page */
+router.get('/professionalinfo', function(req, res, next) {
+  console.log("professionalinfo");
+  res.render('professionalinfo', { title: 'professionalinfo' });
 });
 
 
