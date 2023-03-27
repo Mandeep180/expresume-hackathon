@@ -205,6 +205,13 @@ body {
   }
 
 /* Welcome Dashboard Page */
+.welcome-header {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 5px;
+}
   .welcome-container {
     display: inline-flex;
     margin: 30px;
