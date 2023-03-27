@@ -1,0 +1,158 @@
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+    <style>
+      .title{
+        margin-top: 100px;
+        font-size: 40px;
+        text-align: center;
+      }
+
+      .content-container{
+        width: 90%;
+        margin: auto;
+        margin-top: 100px;
+        border: 1px solid black;
+        display: flex;
+        
+      }
+
+      /*-----------content container end-----------------*/
+
+
+      .left-container{
+        flex: 1;
+        border: 1px solid black;
+      }
+
+      .menu-container{
+        width: 80%;
+        margin: auto;
+        border: 1px solid red;
+      }
+
+      .menu-item{
+        border: 1px solid black;
+        border-radius: 10px;
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 20px;
+        box-shadow: 1px 5px #dfd1d1;
+      }
+
+      .journal{
+        background-color: rgb(63, 145, 232);
+        color: snow;
+      }
+
+      /*-----------left container end-----------------*/
+
+
+      .center-container{
+        flex: 2;
+        border: 1px solid black;
+      }
+
+      .center-content{
+        width: 80%;
+        margin: auto;
+        height: 100%;
+        border: 1px solid black;
+        border-radius: 10px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 1px 5px #dfd1d1;
+      }
+
+      .save-btn{
+        position: absolute;
+        bottom: 40px;
+        padding: 10px 20px 10px 20px;
+      }
+
+
+
+
+      /*-----------center container end-----------------*/
+
+
+
+      .right-container{
+        flex: 1;
+        border: 1px solid black;
+      }
+
+      .journal-container{
+        width: 80%;
+        margin: auto;
+        font-size: 32px;
+
+        text-align: center;
+        border: 1px solid red;
+      }
+
+      .past-journal-title{
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .search-input{
+        font-size: 26px;
+        width: 92%;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 1px 5px #dfd1d1;
+      }
+
+      .journal-item{
+        border: 1px solid black;
+        border-radius: 10px;
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 20px;
+        box-shadow: 1px 5px #dfd1d1;
+      }
+
+      /*-----------right container end-----------------*/
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Worklog</h1>
+      <div class="content-container">
+        <div class="left-container">
+          <div class="menu-container">
+            <div class="menu-item">Personal Info</div>
+            <div class="menu-item journal">Journal</div>
+            <div class="menu-item">Kanban Board</div>
+            <div class="menu-item">Job Listing</div>
+            <div class="menu-item">Resume</div>
+          </div>
+        </div>
+        <div class="center-container">
+          <div class="center-content">
+            <div>center</div>
+
+            <button class="save-btn">Save Work Log</button>
+          </div>
+        </div>
+        <div class="right-container">
+          <div class="journal-container">
+            <div class="past-journal-title">Past Journal</div>
+            <input class="search-input" type="text" placeholder="..." />
+            <div class="journal-item">item1</div>
+            <div class="journal-item">item2</div>
+            <div class="journal-item">item3</div>
+            <div class="journal-item">item4</div>
+            <div class="journal-item">item5</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include partials/footer.ejs%>
+    <%- include partials/bottom_nav.ejs%>
+    
