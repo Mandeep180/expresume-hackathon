@@ -1,3 +1,99 @@
+/*Navigation*/
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+
+#icon {
+    width: 10%;
+    height: 10%;
+}
+
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 17rem;
+  min-height: 100%;
+  background-color: #fff;
+}
+
+.side-bar ul {
+  padding: 1em;
+  margin: 0;
+  list-style-type: none;
+}
+
+.side-bar ul li {
+  margin: 1% 0;
+  padding: 7%;
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.side-bar ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.side-bar ul li:hover {
+  background-color: #2451FF;
+}
+
+.side-bar ul li:hover a {
+    color: #fff;
+  }
+
+.side-bar ul li.active {
+    background-color: #2451FF;
+  }
+  
+  .side-bar ul li.active a {
+    color: #fff;
+  }
+
+.logo-top {
+  text-align: left;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-content {
+  min-height: 100vh;
+  margin-left: 17rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+.main-content .personalInfo,
+.main-content .journal,
+.main-content .kanbanBoard,
+.main-content .resume,
+.main-content .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #000;
+}
+
+/*Homepage*/
 body {
     height: 100%;
     overflow-y: hidden;
@@ -22,7 +118,7 @@ body {
     text-shadow: #000 1px 0 10px;
     display: inline-block;
     font-size: 20px;
-    background-color: #d4df38;
+    background-color: #2451FF;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
   #home_button:hover {
@@ -39,14 +135,14 @@ body {
   .slide__content {
     position: relative;
     margin: 0 auto;
-    height: 80%;
-    width: 80%;
+    height: 90%;
+    width: 90%;
     top: 2%;
   }
   @media (min-width: 54em) {
     .slide__content {
-      height: 80%;
-      width: 80%;
+      height: 90%;
+      width: 90%;
       top: 3%;
     }
   }
@@ -70,6 +166,7 @@ body {
     font-weight: 700;
     color: #fff;
     overflow-y: hidden;
+    text-align: center;
   }
   @media (min-width: 54em) {
     .slide__title {
