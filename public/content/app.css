@@ -74,6 +74,13 @@ main {
   align-items: center;
 }
 
+.nav-login-icon {
+  position:fixed;
+  right: 10px;
+  top: 5px;
+  
+}
+
 .main-content {
   min-height: 100vh;
   margin-left: 17rem;
