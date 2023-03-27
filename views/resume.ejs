@@ -1,12 +1,338 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+    <style>
+
+      
+
+      body{
+        background-color: #F8F8F8;
+      }
+
+      .wrapper{
+        width: 100%;
+      }
+
+      .top-bar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 40px 0px 40px;
+        margin-top: 60px;
+      }
+
+      .ex-logo{
+        width: 80px;
+        height: 80px;
+      }
+
+      .title{
+        border-radius: 10px;
+        padding: 30px 80px;
+        background: rgb(222, 221, 221);
+        font-size: 24px;
+      }
+
+      .content-container{
+        width: 100%;
+        height: 800px;
+        margin: auto;
+        margin-top: 60px;
+        /* border: 1px solid black; */
+        display: flex;
+        
+      }
+
+      /*-----------content container end-----------------*/
+
+
+      .left-container{
+        flex: 1;
+        /* border: 1px solid black; */
+      }
+
+      .menu-container{
+        width: 80%;
+        margin: auto;
+        /* border: 1px solid red; */
+      }
+
+      .menu-item{
+        border: 2px solid rgb(205, 203, 203);
+        border-radius: 10px;
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 20px;
+        box-shadow: 1px 5px #dfd1d1;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .menu-item:hover{
+        background-color: snow;
+        color: #2451FF;
+      }
+
+      .journal{
+        background-color: #2451FF;
+        color: snow;
+      }
+
+      /*-----------left container end-----------------*/
+.center-container {grid-area: document;}
+.right-container {grid-area: option;}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+  'document document document option option'
+  'document document document option option'
+  'document document document option option';
+}
+
+      .center-container{
+        flex: 3;
+        /* border: 1px solid black; */
+      }
+
+      .center-content{
+        width: 60%;
+        height: 80%;
+        background-color: white;
+        margin: auto;
+        height: 100%;
+        border: 1px solid black;
+        border-radius: 10px;
+        position: relative;
+        display: flex;
+        align-items: top;
+        justify-content: center;
+        box-shadow: 1px 5px #dfd1d1;
+      }
+
+      .center-left{
+        /* border: 1px solid black; */
+        width: 100%;
+        flex: 14;
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        margin-left: 40px;
+      }
+
+      .center-right{
+        /* border: 1px solid black; */
+        flex: 1;
+      }
+
+      .save-btn{
+        position: absolute;
+        bottom: 40px;
+        padding: 20px 100px 20px 100px;
+        border-radius: 10px;
+        background-color: #2451FF;
+        color: white;
+        box-shadow: 1px 5px #dfd1d1;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .save-btn:hover{
+        background-color: snow;
+        color: #2451FF;
+      }
+
+
+
+
+
+
+      /*-----------center container end-----------------*/
+
+
+
+      .right-container{
+        flex: 1;
+        margin-right: 100px;
+        /* border: 1px solid black; */
+      }
+
+      .journal-container{
+        width: 80%;
+        margin: auto;
+        font-size: 32px;
+
+        text-align: center;
+        /* border: 1px solid red; */
+      }
+
+      .past-journal-btn{
+        text-align: center;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        background-color: #2451FF;
+        padding: 15px 0px 15px 0px;
+        color: snow;
+        box-shadow: 1px 5px #dfd1d1;
+        cursor: pointer;
+      }
+
+      .past-journal-btn:hover{
+        background-color: snow;
+        color: #2451FF;
+      }
+
+      .previous-work-logs-label{
+        color: grey;
+        text-align: left;
+        margin-bottom: 5px;
+      }
+
+      .journal-item{
+        border: 2px solid rgb(205, 203, 203);
+        border-radius: 10px;
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 20px;
+        box-shadow: 1px 5px #dfd1d1;
+        font-size: 16px;
+        padding: 30px 2px 30px 2px;
+        background-color: white;
+        cursor: pointer;
+      }
+
+      .journal-item:hover{
+        background-color: rgb(211, 208, 208);
+      }
+
+      .journal-item-top{
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .journal-number{
+        font-weight: bold;
+        font-size: 20px;
+        text-align: left;
+        align-items: left;
+      }
+
+      .journal-item-top-date{
+        color: #2451FF;
+      }
+
+      .journal-item-bottom{
+        font-size: 18px;
+        color: grey;
+      }
+
+      .resume-item-input{
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      /*-----------right container end-----------------*/
+
+    </style>
+
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <p>Resume</p>
-  </body>
-</html>
+    
+    <div class="wrapper">
+      <div class="top-bar">
+        <img class="ex-logo" src="Assets/images/resume_.png">
+        <div class="title">untitled-1</div>
+        <div></div>
+      </div>
+      <div class="content-container">
+        
+        <!-- <div class="left-container">
+          <div class="menu-container">
+            <div class="menu-item">Personal Info</div>
+            <div class="menu-item journal">Journal</div>
+            <div class="menu-item">Kanban Board</div>
+            <div class="menu-item">Resume</div>
+          </div>
+        </div> -->
+        <div style="margin-left: 17rem;" class="grid-container">
+          <div class="center-container">
+            <div class="center-content">
+              <div class="center-left">
+                <div>
+                  <h4>What did you do today?</h4>
+                  <hr>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque augue ligula, efficitur sed sem et, porttitor faucibus dolor. Donec venenatis nisi libero, eget sollicitudin nulla pellentesque a. Quisque a dui lectus. Aenean eget ullamcorper purus, vitae fermentum sapien. Aenean tellus tellus, pretium id leo eu, viverra accumsan ex.
+                  </p>
+                  <h4>What problems you encountered?</h4>
+                  <hr>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque augue ligula, efficitur sed sem et, porttitor faucibus dolor. Donec venenatis nisi libero, eget sollicitudin nulla pellentesque a. Quisque a dui lectus. Aenean eget ullamcorper purus, vitae fermentum sapien. Aenean tellus tellus, pretium id leo eu, viverra accumsan ex.
+                  </p>
+                  <h4>Lesson Learned?</h4>
+                  <hr>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque augue ligula, efficitur sed sem et, porttitor faucibus dolor. Donec venenatis nisi libero, eget sollicitudin nulla pellentesque a. Quisque a dui lectus. Aenean eget ullamcorper purus, vitae fermentum sapien. Aenean tellus tellus, pretium id leo eu, viverra accumsan ex.
+                  </p>
+
+                </div>
+    
+                <div class="save-btn">Save</div>
+              </div>
+              <div class="center-right">
+                
+              </div>
+            </div>
+          </div>
+          <div class="right-container">
+            <div class="journal-container">
+              <div class="past-journal-btn">Create Worklog</div>
+              <div class="previous-work-logs-label">Personal Info</div>
+              
+              <div class="journal-item">
+                <div class="journal-item-top">
+                  <div class="journal-number">Full Name</div>
+                </div>
+                <div class="journal-item-bottom">
+                  <input class="resume-item-input" type="text" />
+                </div>
+              </div>
+              <div class="journal-item">
+                <div class="journal-item-top">
+                  <div class="journal-number">Full Name</div>
+                </div>
+                <div class="journal-item-bottom">
+                  <input class="resume-item-input" type="text" />
+                </div>
+              </div>
+              <div class="journal-item">
+                <div class="journal-item-top">
+                  <div class="journal-number">Email</div>
+                </div>
+                <div class="journal-item-bottom">
+                  <input class="resume-item-input" type="text" />
+                </div>
+              </div>
+              <div class="journal-item">
+                <div class="journal-item-top">
+                  <div class="journal-number">Phone</div>
+                </div>
+                <div class="journal-item-bottom">
+                  <input class="resume-item-input" type="text" />
+                </div>
+              </div>
+              <div class="journal-item">
+                <div class="journal-item-top">
+                  <div class="journal-number">Address</div>
+                </div>
+                <div class="journal-item-bottom">
+                  <input class="resume-item-input" type="text" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include partials/footer.ejs%>
+    <%- include partials/bottom_nav.ejs%>
+    
